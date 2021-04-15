@@ -18,7 +18,12 @@
                             <p class="card-text"><b>Nomor Telepon</b> : <?= $datamagang['notp']; ?></p>
                             <p class="card-text"><b>Agama</b> : <?= $datamagang['agama']; ?></p>
 
-                            <a href="" class="btn btn-warning">Edit</a> <a href="" class="btn btn-danger">Delete</a> <br><br>
+                            <a href="/datamagang/edit/<?= $datamagang['magang_id']; ?>" class="btn btn-warning">Edit</a>
+                            <form action="/datamagang/<?= $datamagang['magang_id']; ?>" method="POST" class="d-inline">
+                                <?= csrf_field(); ?>
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda ingin menghapus data <?= $datamagang['nama']; ?>')">Delete</button>
+                            </form> <br><br>
                             <a href="/datamagang">Kembali ke daftar magang.</a>
                         </div>
                     </div>

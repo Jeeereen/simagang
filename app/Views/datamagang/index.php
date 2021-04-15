@@ -4,7 +4,7 @@
             <h1 class="m-4">Daftar Magang</h1>
             <a href="/datamagang/create" class="btn btn-primary m-3">Tambah Data Magang</a>
             <?php if (session()->getFlashdata('pesan')) : ?>
-                <div class="alert alert-success" role="alert">
+                <div class="alert alert-info" role="alert">
                     <?= session()->getFlashdata('pesan'); ?>
                 </div>
             <?php endif; ?>
@@ -26,7 +26,7 @@
                             <td><?= $m['nik']; ?></td>
                             <td><?= $m['nama']; ?></td>
                             <td><img src="/template/dist/img/<?= $m['gambar']; ?>" class="gambar" alt=""></td>
-                            <td><a href="/datamagang/<?= $m['nik']; ?>" class="btn btn-info">Detail</a></td>
+                            <td><a href="/datamagang/<?= $m['magang_id']; ?>" class="btn btn-info">Detail</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
